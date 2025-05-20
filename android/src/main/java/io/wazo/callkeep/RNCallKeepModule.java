@@ -462,7 +462,7 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
         if (payload != null) {
             extras.putBundle(EXTRA_PAYLOAD, payload);
         }
-        this.listenToNativeCallsState();
+        // this.listenToNativeCallsState();
         telecomManager.addNewIncomingCall(handle, extras);
     }
 
@@ -517,7 +517,7 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
         extras.putParcelable(TelecomManager.EXTRA_OUTGOING_CALL_EXTRAS, callExtras);
 
         Log.d(TAG, "[RNCallKeepModule] startCall, uuid: " + uuid);
-        this.listenToNativeCallsState();
+        // this.listenToNativeCallsState();
         telecomManager.placeCall(uri, extras);
     }
 
