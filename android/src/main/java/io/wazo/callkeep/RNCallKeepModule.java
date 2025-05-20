@@ -439,7 +439,7 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
         this.displayIncomingCall(uuid, number, callerName, false, null);
     }
 
-    @ReactMethod
+    // @ReactMethod
     public void displayIncomingCall(String uuid, String number, String callerName, boolean hasVideo) {
         this.displayIncomingCall(uuid, number, callerName, hasVideo, null);
     }
@@ -488,7 +488,7 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
         this.startCall(uuid, number, callerName, false, null);
     }
 
-    @ReactMethod
+    // @ReactMethod
     public void startCall(String uuid, String number, String callerName, boolean hasVideo) {
         this.startCall(uuid, number, callerName, hasVideo, null);
     }
