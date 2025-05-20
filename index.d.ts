@@ -164,8 +164,6 @@ declare module 'react-native-callkeep' {
       handle: string,
       localizedCallerName?: string,
       handleType?: HandleType,
-      hasVideo?: boolean,
-      options?: object,
     ): void
 
     static startCall(
@@ -173,7 +171,6 @@ declare module 'react-native-callkeep' {
       handle: string,
       contactIdentifier?: string,
       handleType?: HandleType,
-      hasVideo?: boolean,
     ): void
 
     static updateDisplay(
