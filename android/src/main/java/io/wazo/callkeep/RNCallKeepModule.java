@@ -312,17 +312,17 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
         Log.d(TAG, "[RNCallKeepModule] listenToNativeCallsState");
         Context context = this.getAppContext();
         int permissionCheck = ContextCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE);
-
+        return
         if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                  callStateListener = new CallStateListener();
-                  telephonyManager.registerTelephonyCallback(context.getMainExecutor(),callStateListener);
+                  // callStateListener = new CallStateListener();
+                  // telephonyManager.registerTelephonyCallback(context.getMainExecutor(),callStateListener);
             } else {
                   if (Looper.myLooper() == null) {
                     Looper.prepare();
                   }
-                  legacyCallStateListener  = new LegacyCallStateListener();
-                  telephonyManager.listen(legacyCallStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+                  // legacyCallStateListener  = new LegacyCallStateListener();
+                  // telephonyManager.listen(legacyCallStateListener, PhoneStateListener.LISTEN_CALL_STATE);
                   Looper.loop();
             }
         }
@@ -462,7 +462,7 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
         if (payload != null) {
             extras.putBundle(EXTRA_PAYLOAD, payload);
         }
-        // this.listenToNativeCallsState();
+        this.listenToNativeCallsState();
         telecomManager.addNewIncomingCall(handle, extras);
     }
 
@@ -517,7 +517,7 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
         extras.putParcelable(TelecomManager.EXTRA_OUTGOING_CALL_EXTRAS, callExtras);
 
         Log.d(TAG, "[RNCallKeepModule] startCall, uuid: " + uuid);
-        // this.listenToNativeCallsState();
+        this.listenToNativeCallsState();
         telecomManager.placeCall(uri, extras);
     }
 
